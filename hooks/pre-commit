@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TOP_LEVEL_DIR=$(git rev-parse --show-toplevel)
+
+stylua "$TOP_LEVEL_DIR"
+
+git add "$TOP_LEVEL_DIR"

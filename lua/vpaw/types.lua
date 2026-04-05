@@ -1,0 +1,8 @@
+---@class vpaw.PluginSpec
+---@field url string github url to fetch the plugin from
+---@field name? string plugin's main module name
+---@field opts? table options to pass into the plugin's setup function
+---@field dependencies? (vpaw.PluginSpec | string)[] Plugins this plugin depends on to successfully set itself up
+---@field keys? table<string, string, function, table> Keymaps
+---@field setup? function Moin
+---@field hooks? table<"pre" | "after", table<"install" | "update" | "delete", function[]>> Hooks to run before/after the plugin was installed/updated/deleted; see :h PackChanged
