@@ -18,7 +18,7 @@ function M.install(specs)
   -- Set up hooks before first call to vim.pack.add. Autocommands won't work if
   -- not added before first call to vim.pack.add when installing from lockfile;
   -- see :h vim.pack-events
-  ---@param plugin Plugin
+  ---@param plugin vpaw.Plugin
   vim.iter(order):each(function(plugin)
     plugin:setup_hooks()
   end)
@@ -32,6 +32,11 @@ function M.install(specs)
     end)
     :totable()
   vim.pack.add(plugin_urls)
+
+  ---@param plugin vpaw.Plugin
+  vim.iter(order):each(function(plugin)
+    vim.cmd.packadd(plugin.plugin_name)
+  end)
 
   vim.iter(order):each(function(plugin)
     plugin:enable()

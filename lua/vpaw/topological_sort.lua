@@ -92,8 +92,8 @@ M.topological_order = function(plugins)
 
   while not vim.tbl_isempty(start_nodes) do
     ---@type Node
-    local url,     ---@type Node
-node = vim.iter(start_nodes):take(1):next()
+    local url, ---@type Node
+      node = vim.iter(start_nodes):take(1):next()
 
     start_nodes[url] = nil
 
