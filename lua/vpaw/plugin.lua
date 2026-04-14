@@ -66,8 +66,6 @@ function Plugin:setup_hooks()
 end
 
 function Plugin:enable()
-  local package = vim.pack.get({ self.plugin_name })[1]
-  vim.opt.runtimepath:append(package.path)
   self.spec.setup()
 
   local keys = self.spec.keys or {}
